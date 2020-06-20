@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            
+            <h:outputStylesheet name="/css/bootstrap.min.css"/>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+             <h:form id="form" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-4"></div>
+                <div  class="col-sm-4">
+                    <h2 style="text-align: center">Isi Permintaan APD</h2>
+                </div>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <h:outputLabel for="id" class="control-label col-sm-4">Id</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="id" value="#{pengadaanApdController.selected.id}" class="form-control" validatorMessage="Id is required">
+                        <f:validateRequired />
+                    </h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="namaSekolah" class="control-label col-sm-4">Nama Sekolah</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="namaSekolah" value="#{pengadaanApdController.selected.namaSekolah}" class="form-control" validatorMessage="Nama Sekolah is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="alamatSekolah" class="control-label col-sm-4">Alamat Sekolah</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputTextarea id="alamatSekolah" value="#{pengadaanApdController.selected.alamatSekolah}" cols="50" rows="5" class="form-control" validatorMessage="Alamat Sekolah is required">
+                        <f:validateRequired/>
+                    </h:inputTextarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="jumlahGuru" class="control-label col-sm-4">Jumlah Guru</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="jumlahGuru" value="#{pengadaanApdController.selected.jumlahGuru}" class="form-control" validatorMessage="Jumlah Guru is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="jumlahPegawai" class="control-label col-sm-4">Jumlah Pegawai</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="jumlahPegawai" value="#{pengadaanApdController.selected.jumlahPegawai}" class="form-control" validatorMessage="Jumlah Pegawai is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="jumlahMurid" class="control-label col-sm-4">Jumlah Murid</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="jumlahMurid" value="#{pengadaanApdController.selected.jumlahMurid}" class="form-control" validatorMessage="Jumlah Murid is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h:outputLabel for="zona" class="control-label col-sm-4">Zona Daerah</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:selectOneRadio value="#{pengadaanApdController.selected.zona}" validatorMessage="Zona Daerah is required">
+                        <f:selectItem itemValue="HIJAU" itemLabel="HIJAU &nbsp;" />
+                        <f:selectItem itemValue="KUNING" itemLabel="KUNING &nbsp;" />
+                        <f:selectItem itemValue="MERAH" itemLabel="MERAH" />
+                        <f:validateRequired/>
+                    </h:selectOneRadio>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h:outputLabel for="reqMasker" class="control-label col-sm-4">Permintaan Masker</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="reqMasker" value="#{pengadaanApdController.selected.reqMasker}" class="form-control" validatorMessage="Permintaan Masker is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="reqFaceshield" class="control-label col-sm-4">Permintaan Faceshield</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="reqFaceshield" value="#{pengadaanApdController.selected.reqFaceshield}" class="form-control" validatorMessage="Permintaan Faceshield is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="reqSanitizer" class="control-label col-sm-4">Permintaan Sanitizer</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="reqSanitizer" value="#{pengadaanApdController.selected.reqSanitizer}" class="form-control" validatorMessage="Permintaan Sanitizer is required">
+                        <f:validateRequired/>
+                    </h:inputText>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    
+                    <div class="col-sm-2">
+                        <h:commandButton value="Simpan" action="#{pengadaanApdController.create}" class="btn btn-success" style="width: 80px;"></h:commandButton>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-2">
+                        
+                        <h:commandLink action="#{pengadaanApdController.prepareList}" value="Kembali ke Data Masuk" immediate="true" class="btn btn-primary"/>
+                    </div>
+                
+                </div>
+            </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

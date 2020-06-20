@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPengadaanApdTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_id}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.id}" title="#{bundle.ViewPengadaanApdTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_namaSekolah}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.namaSekolah}" title="#{bundle.ViewPengadaanApdTitle_namaSekolah}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_alamatSekolah}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.alamatSekolah}" title="#{bundle.ViewPengadaanApdTitle_alamatSekolah}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_jumlahGuru}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.jumlahGuru}" title="#{bundle.ViewPengadaanApdTitle_jumlahGuru}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_jumlahPegawai}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.jumlahPegawai}" title="#{bundle.ViewPengadaanApdTitle_jumlahPegawai}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_jumlahMurid}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.jumlahMurid}" title="#{bundle.ViewPengadaanApdTitle_jumlahMurid}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_zona}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.zona}" title="#{bundle.ViewPengadaanApdTitle_zona}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_reqMasker}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.reqMasker}" title="#{bundle.ViewPengadaanApdTitle_reqMasker}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_reqFaceshield}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.reqFaceshield}" title="#{bundle.ViewPengadaanApdTitle_reqFaceshield}"/>
+                    <h:outputText value="#{bundle.ViewPengadaanApdLabel_reqSanitizer}"/>
+                    <h:outputText value="#{pengadaanApdController.selected.reqSanitizer}" title="#{bundle.ViewPengadaanApdTitle_reqSanitizer}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{pengadaanApdController.destroyAndView}" value="#{bundle.ViewPengadaanApdDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPengadaanApdEditLink}"/>
+                <br />
+                <h:commandLink action="#{pengadaanApdController.prepareCreate}" value="#{bundle.ViewPengadaanApdCreateLink}" />
+                <br />
+                <h:commandLink action="#{pengadaanApdController.prepareList}" value="#{bundle.ViewPengadaanApdShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPengadaanApdIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

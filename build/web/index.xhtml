@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+
+        <title>Permintaan APD</title>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet" />
+        <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+        <link rel="stylesheet" href="css/animate.css" />
+
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+        <link rel="stylesheet" href="css/ionicons.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+        <link rel="stylesheet" href="css/jquery.timepicker.css" />
+
+        <link rel="stylesheet" href="css/flaticon.css" />
+        <link rel="stylesheet" href="css/icomoon.css" />
+        <link rel="stylesheet" href="css/style.css" />
+         <h:outputStylesheet name="/css/bootstrap.min.css"/>
+        <style type="text/css">  
+            table {  
+                border-collapse: collapse;  
+                width: 100%;  
+            }  
+            th, td {  
+                text-align: left;  
+                padding: 8px;  
+            }  
+
+            tr:nth-child(even){background-color: #f2f2f2}  
+            th {  
+                background-color: #4CAF50;  
+                color: white;  
+            }  
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+
+            <div class="container">
+                <a class="navbar-brand" href="index.html">RSBK -Tanggap New Normal</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu" /> Menu
+                </button>
+
+                <div class="collapse navbar-collapse" id="ftco-nav">
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item active"><a href="index.xhtml" class="nav-link">Home</a></li>
+
+                        
+                        <li class="nav-item cta mr-md-1"><a href="http://localhost:8080/rsbk_gredo/faces/pengadaanApd/Create.xhtml" class="nav-link">Isi Permintaan APD</a></li>
+
+                        <li class="nav-item cta cta-colored"><a href="http://localhost:8080/rsbk_gredo/faces/pengadaanApd/List.xhtml" class="nav-link">Lihat Permintaan APD</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+
+
+        <div class="hero-wrap js-fullheight">
+
+            <div class="overlay" />
+
+            <div class="container-fluid px-0">
+
+                <div class="row d-md-flex no-gutters slider-text align-items-end js-fullheight justify-content-end">
+                    <img class="one-third align-self-end order-md-last img-fluid" src="images/testt.png" alt="" />
+
+                    <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+
+                        <div class="text mt-5">
+
+                            <p class="mb-4 mt-5 pt-5">Terdapat Sekitar <span class="number" data-number="2000000">0</span> paket APD yang disediakan pemerintah untuk keperluan sekolah</p>
+
+                            <h1 class="mb-5">Pendataan Permintaan APD Sekolah Tanggap New Normal</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="ftco-section services-section" style="background:#dfecf1">
+
+         <h:form>  
+            <center>  
+                <h2><h:outputText value="Data Masuk Hingga Saat Ini :"/></h2> 
+                <br></br>
+            </center>  
+            
+            <h:dataTable  value="#{pengadaanApdController.items}" 
+                         class="table table-striped table-hover table-bordered"
+                          var="item">  
+               
+                <h:column>  
+                    <f:facet name="header">Nama Sekolah</f:facet>  
+                    <h:outputText value="#{item.namaSekolah}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">Alamat Sekolah</f:facet>  
+                    <h:outputText value="#{item.alamatSekolah}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">Jumlah Guru</f:facet>  
+                    <h:outputText value="#{item.jumlahGuru}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">Jumlah Pegawai</f:facet>  
+                    <h:outputText value="#{item.jumlahPegawai}"/>  
+                </h:column>  
+                <h:column>  
+                    <f:facet name="header">Jumlah Murid</f:facet>  
+                    <h:outputText value="#{item.jumlahMurid}"/>  
+                </h:column>
+                <h:column>  
+                    <f:facet name="header">Zona Daerah</f:facet>  
+                    <h:outputText value="#{item.zona}"/>  
+                </h:column>
+                <h:column>  
+                    <f:facet name="header">Permintaan Masker</f:facet>  
+                    <h:outputText value="#{item.reqMasker}"/>  
+                </h:column>
+                <h:column>  
+                    <f:facet name="header">Permintaan Face Shield</f:facet>  
+                    <h:outputText value="#{item.reqFaceshield}"/>  
+                </h:column>
+                <h:column>  
+                    <f:facet name="header">Permintaan Sanitizer</f:facet>  
+                    <h:outputText value="#{item.reqSanitizer}"/>  
+                </h:column>  
+                
+            </h:dataTable>  
+            
+        </h:form>  
+        </section>
+
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+
+            <div class="container">
+
+                
+
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright 
+                            Gugus Tugas Covid-19 made with <i class="icon-heart text-danger" aria-hidden="true" /> by <a href="https://colorlib.com" target="_blank">RSBK UAS Unch</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- loader -->
+
+        <div id="ftco-loader" class="show fullscreen"><svg class="[object SVGAnimatedString]" width="48px" height="48px"><circle class="[object SVGAnimatedString]" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="[object SVGAnimatedString]" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+        <script src="js/jquery.min.js"></script>
+
+        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+
+        <script src="js/popper.min.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/jquery.easing.1.3.js"></script>
+
+        <script src="js/jquery.waypoints.min.js"></script>
+
+        <script src="js/jquery.stellar.min.js"></script>
+
+        <script src="js/owl.carousel.min.js"></script>
+
+        <script src="js/jquery.magnific-popup.min.js"></script>
+
+        <script src="js/aos.js"></script>
+
+        <script src="js/jquery.animateNumber.min.js"></script>
+
+        <script src="js/scrollax.min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+
+        <script src="js/google-map.js"></script>
+
+        <script src="js/main.js"></script>
+
+
+    </body></html>

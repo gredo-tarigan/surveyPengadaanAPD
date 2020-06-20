@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputStylesheet name="/css/bootstrap.min.css"/>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form id="form" class="form-horizontal">
+                <div class="form-group">
+                <div class="col-sm-2"></div>
+                <h2 style="text-align: center" class="col-sm-4">Edit Rekapan Data :</h2>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <h:outputLabel for="id" class="control-label col-sm-2">Id</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="id" value="#{pengadaanApdController.selected.id}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="namaSekolah" class="control-label col-sm-2">Nama Sekolah</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="namaSekolah" value="#{pengadaanApdController.selected.namaSekolah}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="alamatSekolah" class="control-label col-sm-2">Alamat Sekolah</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputTextarea value="#{pengadaanApdController.selected.alamatSekolah}" cols="50" rows="5" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="jumlahGuru" class="control-label col-sm-2">Jumlah Guru</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="jumlahGuru" value="#{pengadaanApdController.selected.jumlahGuru}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="jumlahPegawai" class="control-label col-sm-2">Jumlah Pegawai</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="jumlahPegawai" value="#{pengadaanApdController.selected.jumlahPegawai}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="jumlahMurid" class="control-label col-sm-2">Jumlah Murid</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="jumlahMurid" value="#{pengadaanApdController.selected.jumlahMurid}" class="form-control"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h:outputLabel for="zona" class="control-label col-sm-2">Zona Daerah</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:selectOneRadio value="#{pengadaanApdController.selected.zona}">
+                        <f:selectItem itemValue="HIJAU" itemLabel="HIJAU &nbsp;" /> 
+                        <f:selectItem itemValue="KUNING" itemLabel="KUNING &nbsp;" />
+                        <f:selectItem itemValue="MERAH" itemLabel="MERAH" />
+                    </h:selectOneRadio>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="reqMasker" class="control-label col-sm-2">Permintaan Masker</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="reqMasker" value="#{pengadaanApdController.selected.reqMasker}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="reqFaceshield" class="control-label col-sm-2">Permintaan Faces Shield</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="reqFaceshield" value="#{pengadaanApdController.selected.reqFaceshield}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="reqSanitizer" class="control-label col-sm-2">Permintaan Sanitizer</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="reqSanitizer" value="#{pengadaanApdController.selected.reqSanitizer}" class="form-control"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <center><h:commandButton value="Update" action="#{pengadaanApdController.update}" class="btn btn-primary" style="width: 80px;"></h:commandButton></center>
+                </div>
+            </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
